@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="container col-md-offset-2 col-md-8">
+        <span class="container col-md-offset-4 text-center"><h2>Latest Commits</h2></span>
+
+    </div>
+</div>
+
+</br>
+
+<div class="row">
+    <div ng-show="vm.isAuthenticated" class="container col-md-offset-2 col-md-8">
+        <div ng-click="vm.addCommit(newCommit)" ng-disabled="!newCommit" class="btn btn-small btn-primary pull-right" ng-show="vm.isAuthenticated">Commit</div>
+
+        <div class="form-group">
+            <label for="name" class="col-md-2 control-label">Source Code</label>
+            <div class="col-md-10">
+                <textarea class="form-control" ng-model="newCommit.sourceCode" id="name" required="required" />
+            </div>
+        </div>
+
+    </div>
+</div>
+    </br>
+
+<div class="row">
+    <div class="container col-md-offset-2 col-md-8">
+
+        <div class="panel panel-primary">
+            <div commits-directive />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+﻿<div class="row">
+    <div class="container col-md-offset-2 col-md-8">
+        <span class="container col-md-offset-4 text-center"><h2>Projects</h2></span>
+        <a href="#/projects/add" class="btn btn-small btn-primary pull-right" ng-show="vm.isAuthenticated">Add New Project</a>
+    </div>
+</div>
+
+</br>
+
+
+<div ng-show="vm.isAuthenticated" class="text-center">
+    <div class="row col-md-offset-2 col-md-8">
+        <div class="col-md-2">
+            <label for="sort" class="control-label">Order</label>
+        </div>
+        <div class="col-md-2">
+            <label for="order" class="control-label">Sort By</label>
+        </div>
+        <div class="col-md-3">
+            <label for="from" class="control-label">By User</label>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                <input type="checkbox" id="onlyPublic" class="k-checkbox" ng-model="vm.request.OnlyPublic">
+                <label class="k-checkbox-label" for="onlyPublic">Only Public</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-md-offset-2 col-md-8">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <div>
+                        <select class="form-control" id="order" ng-init="vm.request.OrderType = 'asc' " ng-model="vm.request.OrderType">
+                            <option value="asc">Ascending</option>
+                            <option value="desc">Descending</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="form-group">
+                    <div>
+                        <select class="form-control" id="sort" ng-init="vm.request.OrderBy = 'date' " ng-model="vm.request.OrderBy">
+                            <option value="collaborators">Collaborators</option>
+                            <option value="date">Date</option>
+                            <option value="name">Name</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group">
+                    <input id="email" type="text" placeholder="E-mail" ng-model="vm.request.ByUser" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-md-5 text-left">
+                <span class="col-md-5 text-right"><strong>Page</strong></span>
+                <span class=col-md-7>
+                    <div class="col-md-3">
+                        <button class="btn btn-sm" ng-click="vm.prevPage()">&lt;&lt;</button>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" ng-model="vm.request.Page" class="form-control" />
+                    </div>
+                    <div class="col-md-3">
+                        <button class="btn btn-sm" ng-click="vm.nextPage()">&gt;&gt;</button>
+                    </div>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+
+        </div>
+
+        <div class="row text-center">
+             <button class="btn btn-lg btn-block btn-info" ng-click="vm.filterProjects()">Filter</button>
+        </div>
+        </br>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container col-md-offset-2 col-md-8">
+
+        <div class="panel panel-primary">
+            <div projects-directive />
+        </div>
+    </div>
+</div>
+
+

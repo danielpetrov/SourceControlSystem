@@ -1,0 +1,33 @@
+﻿<div class="panel-body">
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">
+                <strong>Name</strong>
+            </th>
+
+            <th class="text-center">
+                <strong>License</strong>
+            </th>
+            <th class="text-center">
+                <strong>Created On</strong>
+            </th>
+            <th class="text-center">
+                <strong>Users</strong>
+            </th>
+        </tr>
+        <tr ng-repeat="project in vm.publicProjects">
+            <td class="text-center">
+                <a href="#/projects/{{project.Id}}">{{project.Name}}</a>
+            </td>
+            <td class="text-center">
+                {{project.License}}
+            </td>
+            <td class="text-center">
+                {{project.CreatedOn | beautifullDateFilter}}
+            </td>
+            <td class="text-center">
+                {{project.TotalUsers}}
+            </td>
+        </tr>
+    </table>
+</div>

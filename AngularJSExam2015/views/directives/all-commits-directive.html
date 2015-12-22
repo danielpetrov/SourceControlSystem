@@ -1,0 +1,20 @@
+﻿<div class="panel-body">
+    <table class="table table-bordered">
+        <tr>
+            <th class="text-center">
+                <strong>User Name</strong>
+            </th>
+            <th class="text-center">
+                <strong>Created On</strong>
+            </th>
+        </tr>
+        <tr ng-repeat="commits in vm.publicCommits">
+            <td class="text-center">
+                <a href="#/commits/{{commits.Id}}">{{commits.UserName}}</a>
+            </td>
+            <td class="text-center">
+                {{commits.CreatedOn | beautifullDateFilter}}
+            </td>
+        </tr>
+    </table>
+</div>
